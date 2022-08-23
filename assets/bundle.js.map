@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","sources":["../src/main.js"],"sourcesContent":["import './styles/index.styl'\n\nfunction main() {\n  console.log('hello word')\n}\n\ndocument.addEventListener('DOMContentLoaded', main)"],"names":[],"mappings":";;AAEA,SAAS,IAAI,GAAG;AAChB,EAAE,OAAO,CAAC,GAAG,CAAC,YAAY,EAAC;AAC3B,CAAC;AACD;AACA,QAAQ,CAAC,gBAAgB,CAAC,kBAAkB,EAAE,IAAI;;"}
