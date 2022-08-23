@@ -1,6 +1,4 @@
-{% section 'home_banner' %}
-
-{% comment %} {
+{
   "sections": {
     "home_banner": {
       "type": "home_banner"
@@ -9,4 +7,4 @@
   "order": [
     "home_banner"
   ]
-} {% endcomment %}
+}
