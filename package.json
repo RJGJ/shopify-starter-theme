@@ -1,0 +1,22 @@
+{
+  "name": "starter-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup --watch --config rollup.config.dev.js",
+    "build": "rollup --config rollup.config.prod.js"
+  },
+  "author": "RJ",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "postcss-import": "^14.1.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "stylus": "^0.58.1"
+  },
+  "dependencies": {}
+}
