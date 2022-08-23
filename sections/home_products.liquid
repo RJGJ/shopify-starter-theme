@@ -1,0 +1,18 @@
+<section class="products">
+  <div class="container">
+    <ul>
+      {% for collection in collections %}
+        <li>{{ collection.id }} : {{ collection.title }}</li>
+      {% endfor %}
+    </ul>
+    
+    <ul>
+      {% for product in collections.all.products %}
+        <li>
+          <pre>{{ product.images[0] | img_url | img_tag }}</pre>
+          <h3>{{ product.title }}</li></h3>
+          <p>{{ product.description }}</p>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

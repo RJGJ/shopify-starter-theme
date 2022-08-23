@@ -1,7 +1,6 @@
+import Alpine from 'alpinejs'
 import './styles/index.styl'
 
-function main() {
-  console.log('hello word')
-}
+window.Alpine = Alpine
 
-document.addEventListener('DOMContentLoaded', main)
+Alpine.start()
