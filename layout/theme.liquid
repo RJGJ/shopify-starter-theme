@@ -22,10 +22,10 @@
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
-    {% section 'global_top-bar' %}
+    {% section 'global__top-bar' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-    {% section 'global_footer' %}
+    {% section 'global__footer' %}
   </body>
 </html>

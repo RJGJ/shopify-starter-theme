@@ -1,1 +1,19 @@
-<h1>cart</h1>
+<h1>Cart</h1>
+<ul>
+	<table border="1">
+		<tr>
+			<th>SKU</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+		</tr>
+		{% for item in cart.items %}
+		  <tr>
+		  	<td>{{ item.sku }}</td>
+		  	<td>{{ item.title }}</td>
+		  	<td>{{ item.final_price | money_with_currency }}</td>
+		  	<td>{{ item.quantity }}</td>
+		  </tr>
+		{% endfor %}
+	</table>
+</ul>

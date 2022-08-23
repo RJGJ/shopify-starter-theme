@@ -1,10 +1,10 @@
 {
   "sections": {
     "home_banner": {
-      "type": "home_banner"
+      "type": "home__banner"
     },
     "products": {
-      "type": "global_products-list"
+      "type": "global__products-list",
       "settings": {
       }
     }

@@ -4,10 +4,10 @@ since shopify does not allow subfolders on this directory we should follow a nam
 
 ```txt
 
-`home_contact-form.liquid`
-     ^       ^
-     |       |
-     |       |- name should be in kebab case
+`home__contact-form.liquid`
+     ^        ^
+     |        |
+     |        |- name should be in kebab case
      |
      |- grouping separator like folder
 ```
