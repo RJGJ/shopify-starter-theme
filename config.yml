@@ -1,7 +1,7 @@
-# development:
-#   ignore_files: 
-#     - 'src/'
-#     - '.gitignore'
-#     - 'package.json'
-#     - 'package-lock.json'
-#     - 'rollup**'
+development:
+  ignore_files: 
+    - 'src/'
+    - './.gitignore'
+    - './package.json'
+    - './package-lock.json'
+    - 'rollup**'
