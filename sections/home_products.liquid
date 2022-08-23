@@ -5,7 +5,6 @@
         <li>{{ collection.id }} : {{ collection.title }}</li>
       {% endfor %}
     </ul>
-    
     <ul>
       {% for product in collections.all.products %}
         <li>
@@ -13,7 +12,6 @@
           <a href="{{ product.url }}">
             <h3>{{ product.title }}</li></h3>
           </a>
-          {% comment %} <p>{{ product.description }}</p> {% endcomment %}
       {% endfor %}
     </ul>
   </div>
