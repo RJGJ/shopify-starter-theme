@@ -1,5 +1,18 @@
 <footer>
   <div class="container">
-    <h2>footer</h2>
+    <p>{{ section.settings.footer_text }}</p>
   </div>
 </footer>
+
+{% schema %}
+{
+  "name": "global footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "footer_text",
+      "default": "default footer text"
+    }
+  ]
+}
+{% endschema %}

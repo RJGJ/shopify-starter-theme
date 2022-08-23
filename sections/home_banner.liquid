@@ -1,6 +1,6 @@
 <section class="banner">
   <div class="container" x-data="{ count: 0 }">
-    <h1>Banner Section</h1>
+    <h1>{{ section.settings.main_text }}</h1>
   </div>
 </section>
 
@@ -10,8 +10,9 @@
   "settings":  [
     {
       "type": "text",
-      "id": "home-banner-main-text",
-      "label": "Banner text"
+      "id": "main_text",
+      "label": "Banner text",
+      "default": "Default banner text"
     }
   ]
 }
