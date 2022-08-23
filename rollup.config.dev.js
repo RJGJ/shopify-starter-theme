@@ -10,7 +10,6 @@ export default {
   input: "src/main.js",
   output: {
     file: "assets/bundle.js",
-    format: "cjs",
     sourcemap: true,
     plugins: [],
   },

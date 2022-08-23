@@ -1,3 +1,1 @@
-:root {
-  --message: 'hello word';
-}
+:root{--test:"test";--theme_primary:#00f;--theme_secondary:red;--theme_black:#000;--theme_white:#fff;--theme_heading_family:"Serif";--theme_text_family:"Sans serif"}body{margin:0}*{box-sizing:border-box}

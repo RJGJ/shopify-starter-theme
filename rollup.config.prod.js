@@ -10,7 +10,7 @@ export default {
   input: "src/main.js",
   output: {
     file: "assets/bundle.js",
-    format: "cjs",
+    format: "iife",
     sourcemap: true,
     plugins: [
       terser({

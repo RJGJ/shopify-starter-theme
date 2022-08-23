@@ -1,7 +1,8 @@
 development:
   ignore_files: 
-    - 'src/'
-    - './.gitignore'
-    - './package.json'
-    - './package-lock.json'
-    - 'rollup**'
+    - "src/*"
+    - "src/"
+    - "./.gitignore"
+    - "./package.json"
+    - "./package-lock.json"
+    - "rollup**"

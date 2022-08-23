@@ -10,8 +10,10 @@
       {% for product in collections.all.products %}
         <li>
           <pre>{{ product.images[0] | img_url | img_tag }}</pre>
-          <h3>{{ product.title }}</li></h3>
-          <p>{{ product.description }}</p>
+          <a href="{{ product.url }}">
+            <h3>{{ product.title }}</li></h3>
+          </a>
+          {% comment %} <p>{{ product.description }}</p> {% endcomment %}
       {% endfor %}
     </ul>
   </div>
