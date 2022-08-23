@@ -1,0 +1,13 @@
+<section>
+  <div class="container">
+    <h2>Products</h2>
+    <div class="products">
+      {% for product in collections.all.products %}
+        <div class="product">
+          {{ product.images[0] | img_url | img_tag }}
+          <a href="{{ product.url }}">{{ product.title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

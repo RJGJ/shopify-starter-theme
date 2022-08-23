@@ -2,9 +2,13 @@
   "sections": {
     "home_banner": {
       "type": "home_banner"
+    },
+    "products": {
+      "type": "global_products-list"
     }
   },
   "order": [
+    "products",
     "home_banner"
   ]
 }
