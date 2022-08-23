@@ -5,6 +5,8 @@
     },
     "products": {
       "type": "global_products-list"
+      "settings": {
+      }
     }
   },
   "order": [
