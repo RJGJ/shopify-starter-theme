@@ -2920,35 +2920,44 @@ document.addEventListener('alpine:init', () => {
   console.log('hello from alpine');  
 });
 
+// Alpine.data reusable like components
+module_default.data('Cart', (cart) => ({
+  // props
+  cart,
+
+  // data
+  store_url: window.Shopify.routes.root,
+  
+  // methods
+  removeItem(id) {
+    this.changeQuantinty(id, 6);
+  },
+  changeQuantinty(id, quantity=null) {
+    if (quantity === null) {
+      const quantity_el = document.querySelector(`[data-quantity="${id}"]`);
+      quantity = parseInt(quantity_el.value);
+      console.log(quantity);
+    }
+    // return
+    fetch(this.store_url + 'cart/change.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        quantity,
+        id
+      })
+    })
+      .then(async (response) => {
+        console.log(await response.json());
+        location.reload();
+      });
+  },
+  updateCart() {
+    console.log(this.cart);
+  }
+}));
+
 module_default.start();
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   console.log('hello world')
-
-
-
-//   // cart listeners
-//   document
-//     .querySelectorAll('[data-remove-line-item]')
-//     .forEach(remove => {
-//       const product_id = remove.getAttribute('data-remove-line-item')
-//       remove.addEventListener('click', () => {
-//         console.log(product_id)
-
-//         fetch('/cart/change.js', {
-//           method: 'POST',
-//           headers: {
-//             'Content-Type': 'application/json'
-//           },
-//           body: JSON.stringify({
-//             quantity: 0,
-//             id: product_id
-//           })
-//         })
-//           .then(response => response.json())
-//           .then(json => console.log(json))
-//           .catch(err => console.err(err))
-//       })
-//     })
-// })
 //# sourceMappingURL=bundle.js.map

@@ -1,0 +1,37 @@
+<section class="cart" x-data="Cart({{ cart | json | escape }})">
+  <div class="container">
+    <h1>Cart</h1>
+    <div class="cart">
+      <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+        </tr>
+        {% for item in cart.items %}
+          <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.final_price | money_with_currency }}</td>
+            <td>{{ item.quantity }}</ td>
+            <td>
+              <button @click="removeItem('{{ item.key }}')">remove</button>
+            </td>
+            <td>
+              <input type="number" value="{{ item.quantity }}" data-quantity="{{ item.key }}">
+              <button @click="changeQuantinty('{{ item.key }}')">update qty</button>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div>
+      checkout total: {{ cart.checkout_charge_amount | money_with_currency }}
+    </div>
+    {% form 'cart', cart %}
+      <!-- form content -->
+      <input type="submit" value="checkout">
+    {% endform %}
+  </div>
+</section>
