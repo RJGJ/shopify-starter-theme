@@ -18,5 +18,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "stylus": "^0.58.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "alpinejs": "^3.10.3"
+  }
 }

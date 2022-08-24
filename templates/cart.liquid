@@ -1,11 +1,13 @@
 <h1>Cart</h1>
-<ul>
+<div class="cart" x-data="{ cart: {{ cart | json | escape }} }">
+	<pre x-html="JSON.stringify(cart)"></pre>		
 	<table border="1">
 		<tr>
 			<th>SKU</th>
 			<th>Name</th>
 			<th>Price</th>
 			<th>Quantity</th>
+			<th>&nbsp;</th>
 		</tr>
 		{% for item in cart.items %}
 		  <tr>
@@ -13,6 +15,9 @@
 		  	<td>{{ item.title }}</td>
 		  	<td>{{ item.final_price | money_with_currency }}</td>
 		  	<td>{{ item.quantity }}</td>
+		  	<td>
+		  		<button data-remove-line-item="{{ item.id }}">remove</button>
+		  	</td>
 		  </tr>
 		{% endfor %}
 	</table>
