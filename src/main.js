@@ -5,7 +5,23 @@ import './styles/index.styl'
 window.Alpine = Alpine
 
 document.addEventListener('alpine:init', () => {
-  console.log('hello from alpine')  
+
+  // // client side navigation
+  // document.querySelectorAll('a').forEach(a => {
+  //   a.addEventListener('click', (ev) => {
+  //     ev.preventDefault()
+  //     history.replaceState({}, "", a.href)
+  //     fetch(a.href)
+  //       .then(response => response.text())
+  //       .then(text => {
+  //         const new_document = new DOMParser().parseFromString(text, "text/html")
+  //         document.head = new_document.head
+  //         document.body = new_document.body
+  //         Alpine.start()
+  //       })
+  //       .catch(err => console.error(err))
+  //   })
+  // })
 })
 
 // Alpine.data reusable like components
