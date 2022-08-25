@@ -1,13 +1,50 @@
-<section>
-  <div class="container">
-    <h2>Products</h2>
-    <div class="products">
-      {% for product in collections.all.products %}
-        <div class="product">
-          {{ product.images[0] | image_url: width: 100, height: 100 | image_tag: loading: 'lazy' }}
-          <a href="{{ product.url }}">{{ product.title }}</a>
-        </div>
-      {% endfor %}
+<section class="products">
+  <div class="products__container container">
+    <div class="products__sidebar">
+      {% render 'product-filter' %}
+    </div>
+    <div class="products__list-wrap">
+      {% if collection %}
+        {% paginate collection.products by 9 %}
+          <div class="products__list">
+            {% for product in collection.products %}
+              <a href="{{ product.url }}">
+                <article class="products__item">
+                  <div class="products__item-image-wrap">
+                    {{ 
+                      product.images[0] 
+                        | image_url: width: 200, height: 200 
+                        | image_tag: class: 'products__item-image' 
+                    }}
+                  </div>
+                  <h5 class="products__item-title">{{ product.title }}</h3>
+                </article>
+              </a>
+            {% endfor %}
+          </div>
+          <div class="products__pagination">{{ paginate | default_pagination }}</div>
+        {% endpaginate %}
+      {% else %}
+        {% paginate collections.all.products by 9 %}
+          <div class="products__list">
+            {% for product in collections.all.products %}
+              <a href="{{ product.url }}">
+                <article class="products__item">
+                  <div class="products__item-image-wrap">
+                    {{ 
+                      product.images[0] 
+                        | image_url: width: 200, height: 200 
+                        | image_tag: class: 'products__item-image' 
+                    }}
+                  </div>
+                  <h5 class="products__item-title">{{ product.title }}</h3>
+                </article>
+              </a>
+            {% endfor %}
+          </div>
+          <div class="products__pagination">{{ paginate | default_pagination }}</div>
+        {% endpaginate %}
+      {% endif %}
     </div>
   </div>
 </section>

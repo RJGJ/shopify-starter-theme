@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "products": {
+      "type": "global__products-list",
+      "settings": {}
+    }
+  },
+  "order": [
+    "products"
+  ]
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+
 :root 
   --test: 'test'
 
@@ -11,8 +13,32 @@
   --theme_heading_family: 'Serif'
   --theme_text_family: 'Sans serif'
 
+  // other
+  --topbar_margin: 50px
+
 body
   margin: 0
 
+// all
 * 
   box-sizing: border-box
+  
+  // typohraphy
+  font-family: 'Montserrat', sans-serif
+
+// global element styles
+main
+  margin-top: var(--topbar_margin)
+
+a
+  color: black
+  // font-weight: bold
+  // text-decoration: none
+
+.container
+  max-width: 1280px
+  padding-left: 20px
+  padding-right: 20px
+  margin: 0 auto
+
+

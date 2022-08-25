@@ -18,7 +18,7 @@ Alpine.data('Cart', (cart) => ({
   
   // methods
   removeItem(id) {
-    this.changeQuantinty(id, 6)
+    this.changeQuantinty(id, 0)
   },
   changeQuantinty(id, quantity=null) {
     if (quantity === null) {
@@ -44,6 +44,20 @@ Alpine.data('Cart', (cart) => ({
   },
   updateCart() {
     console.log(this.cart)
+  }
+}))
+
+Alpine.data('ProductSearch', () => ({
+  search_term: '',
+  products: [],
+
+  async search() {
+    if (!this.search_term) return
+
+    const response = await fetch(`/search/suggest.json?q=${this.search_term}&resources[type]=product`)
+    const json = await response.json()
+    this.products = json.resources.results.products
+    console.log(this.products)
   }
 }))
 

@@ -1,11 +1,12 @@
-<header>
-  <div class="container">
-    <a href="{{ shop.url }}">{{ shop.name }}</a>
-    <nav>
-      <ul>
+<header class="top-bar">
+  <div class="top-bar__container container">
+    {% comment %} <a class="top-bar__brand" href="{{ shop.url }}">{{ shop.name }}</a> {% endcomment %}
+    <a class="top-bar__brand" href="/">{{ shop.name }}</a>
+    <nav class="top-bar__navigation">
+      <ul class="top-bar__navigation-list">
         {% for page in pages %}
-          <li>
-            <a href="{{ page.url }}">{{ page.title }}</a>
+          <li class="top-bar__navigation-list-item">
+            <a class="top-bar__navigation-list-item-link" href="{{ page.url }}">{{ page.title }}</a>
           </li>
         {% endfor %}
       </ul>

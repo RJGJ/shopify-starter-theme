@@ -29,9 +29,13 @@
     <div>
       checkout total: {{ cart.checkout_charge_amount | money_with_currency }}
     </div>
-    {% form 'cart', cart %}
-      <!-- form content -->
-      <input type="submit" value="checkout">
-    {% endform %}
+    {% if cart.item_count > 0 %}
+      {% form 'cart', cart %}
+        <!-- form content -->
+        <input type="submit" name="checkout" value="checkout">
+      {% endform %}
+    {% else %}
+      <p>cart is empty. <a href="/">Continue shopping</a></p>
+    {% endif %}
   </div>
 </section>
